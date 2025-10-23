@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TopRatedProviders from '../Components/TopRatedProviders';
 import Carousel from '../Components/Carousel';
 import HowItWorks from '../Components/HowItWorks';
+import { Link } from 'react-router-dom'; // Optional: future routing
 
 const Home = () => {
   const [skills, setSkills] = useState([]);
@@ -17,7 +18,7 @@ const Home = () => {
     <>
       {/* 🌟 Hero Carousel Section */}
       <div className="home-carousel">
-        <Carousel></Carousel>
+        <Carousel />
       </div>
 
       {/* 🌿 All Skills Section */}
@@ -30,14 +31,14 @@ const Home = () => {
           {skills.map((skill) => (
             <div
               key={skill.skillId}
-              className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition"
+              className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex flex-col"
             >
               <img
                 src={skill.image}
                 alt={skill.skillName}
                 className="w-full h-70 object-cover"
               />
-              <div className="p-4">
+              <div className="p-4 flex-1">
                 <h3 className="text-xl font-semibold mb-1">
                   {skill.skillName}
                 </h3>
@@ -51,16 +52,26 @@ const Home = () => {
                 <p className="text-yellow-500 font-semibold">
                   Rating: {skill.rating} ⭐
                 </p>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-sm mb-4">
                   Slots Available: {skill.slotsAvailable}
                 </p>
+              </div>
+              {/* 👇 View Details Button */}
+              <div className="p-4 text-center">
+                <Link
+                  to={`/skills/${skill.skillId}`}
+                  className="block bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700 transition"
+                >
+                  View Details
+                </Link>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <TopRatedProviders></TopRatedProviders>
-      <HowItWorks></HowItWorks>
+
+      <TopRatedProviders />
+      <HowItWorks />
     </>
   );
 };

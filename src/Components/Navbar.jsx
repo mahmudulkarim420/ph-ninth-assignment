@@ -46,14 +46,6 @@ const Navbar = () => {
             >
               Skills
             </NavLink>
-            <NavLink
-              to="/top-providers"
-              className={({ isActive }) =>
-                isActive ? activeClass : inactiveClass
-              }
-            >
-              Top Providers
-            </NavLink>
 
             {user ? (
               <>
@@ -139,17 +131,6 @@ const Navbar = () => {
             }
           >
             Skills
-          </NavLink>
-          <NavLink
-            to="/top-providers"
-            onClick={() => setMenuOpen(false)}
-            className={({ isActive }) =>
-              `block py-2 px-3 rounded ${
-                isActive ? 'bg-indigo-100 font-bold' : 'hover:bg-indigo-100'
-              }`
-            }
-          >
-            Top Providers
           </NavLink>
 
           {user ? (
