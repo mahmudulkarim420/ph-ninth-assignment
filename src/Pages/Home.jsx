@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import './Home.css';
+
+import TopRatedProviders from '../Components/TopRatedProviders';
+import Carousel from '../Components/Carousel';
 
 const Home = () => {
   const [skills, setSkills] = useState([]);
@@ -20,39 +17,14 @@ const Home = () => {
     <>
       {/* 🌟 Hero Carousel Section */}
       <div className="home-carousel">
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-          loop={true}
-          spaceBetween={0}
-          slidesPerView={1}
-        >
-          {[
-            'https://i.ibb.co/7J5zwqwT/Ym-Ew-OGQ5-My5qc-Gc.jpg',
-            'https://i.ibb.co/3m5c7jcb/MA.jpg',
-            'https://i.ibb.co/W4gD2yjj/c3MuanBn.jpg',
-            'https://i.ibb.co/xK8ZkWbL/UlVJPQ.jpg',
-            'https://i.ibb.co/LhgBBGzR/LnBuZw.png',
-            'https://i.ibb.co/WpK0V9XV/OSZzc2w9-MQ.jpg',
-            'https://i.ibb.co/jv78HbC1/JnE9NzA.jpg',
-            'https://i.ibb.co/XxLZYhFS/LWNvc-Hkuan-Bn.jpg',
-            'https://i.ibb.co/ks88LqGk/Nz-Bf-Vj-Ff-X18uc-G5n.jpg',
-            'https://i.ibb.co/0yMXxsym/a-W5n-Lmpw-Zw.jpg',
-            'https://i.ibb.co/tpbbYpkv/cy5wbmc.png',
-            'https://i.ibb.co/d4w6Gd7M/c-Gh5-LTE0-Nz-Quan-Bn.jpg',
-          ].map((img, index) => (
-            <SwiperSlide key={index}>
-              <img src={img} alt={`Slide ${index + 1}`} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <Carousel></Carousel>
       </div>
 
       {/* 🌿 All Skills Section */}
       <div className="home-page max-w-6xl mx-auto p-6 mt-20">
-        <h2 className="text-3xl font-bold mb-6 text-center">All Skills</h2>
+              <h2 className="text-3xl font-bold text-center mb-8 text-blue-600">
+        🌟 All Skills
+      </h2>
 
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((skill) => (
@@ -87,6 +59,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <TopRatedProviders></TopRatedProviders>
     </>
   );
 };
