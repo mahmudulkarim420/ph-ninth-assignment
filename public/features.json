@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "✅",
+    "title": "Verified Providers",
+    "desc": "All providers are verified for quality and reliability."
+  },
+  {
+    "icon": "⏰",
+    "title": "Flexible Schedule",
+    "desc": "Book sessions anytime that suits your schedule."
+  },
+  {
+    "icon": "💰",
+    "title": "Affordable Pricing",
+    "desc": "Skills at reasonable prices for everyone."
+  },
+  {
+    "icon": "📞",
+    "title": "24/7 Support",
+    "desc": "Get help whenever you need it."
+  }
+]

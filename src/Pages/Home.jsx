@@ -3,6 +3,7 @@ import TopRatedProviders from '../Components/TopRatedProviders';
 import Carousel from '../Components/Carousel';
 import HowItWorks from '../Components/HowItWorks';
 import { Link } from 'react-router-dom'; // Optional: future routing
+import WhyChooseUs from '../Components/WhyChooseUs';
 
 const Home = () => {
   const [skills, setSkills] = useState([]);
@@ -72,6 +73,7 @@ const Home = () => {
 
       <TopRatedProviders />
       <HowItWorks />
+      <WhyChooseUs/>
     </>
   );
 };

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "icon": "FaUserPlus",
+    "title": "Create an Account",
+    "description": "Sign up with your email and set up your skill profile to get started."
+  },
+  {
+    "id": 2,
+    "icon": "FaHandshake",
+    "title": "Find a Match",
+    "description": "Browse through available skills or post what you can teach and what you want to learn."
+  },
+  {
+    "id": 3,
+    "icon": "FaExchangeAlt",
+    "title": "Exchange Skills",
+    "description": "Connect with others to exchange knowledge through online or in-person sessions."
+  },
+  {
+    "id": 4,
+    "icon": "FaStar",
+    "title": "Rate & Review",
+    "description": "After each session, share your feedback to help others choose trusted providers."
+  }
+]
