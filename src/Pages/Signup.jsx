@@ -1,11 +1,12 @@
-import { useContext, useState } from "react";
-import { AuthContext } from "../Providers/AuthProviders";
-import { Link, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import toast, { Toaster } from "react-hot-toast";
+import { useContext, useState } from 'react';
+import { AuthContext } from '../Providers/AuthProviders';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Signup = () => {
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile, googleLogin } =
+    useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -17,19 +18,26 @@ const Signup = () => {
     const password = form.password.value;
     const photoURL = form.photo.value;
 
-   
     createUser(email, password)
       .then(() => {
-      
         updateUserProfile(name, photoURL)
           .then(() => {
-            toast.success("Signup successful! Please log in.");
+            toast.success('Signup successful! Please log in.');
             form.reset();
-            navigate("/login");
+            navigate('/login');
           })
-          .catch(() => toast.error("Failed to update profile."));
+          .catch(() => toast.error('Failed to update profile.'));
       })
       .catch((error) => toast.error(error.message));
+  };
+
+  const handleGoogleSignup = () => {
+    googleLogin()
+      .then(() => {
+        toast.success('Google signup/login successful!');
+        navigate('/home');
+      })
+      .catch((err) => toast.error(err.message));
   };
 
   return (
@@ -37,6 +45,7 @@ const Signup = () => {
       <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-8">
         <h2 className="text-2xl font-bold text-center mb-6">Create Account</h2>
         <Toaster position="top-center" />
+
         <form onSubmit={handleSignup}>
           <input
             type="text"
@@ -60,7 +69,7 @@ const Signup = () => {
           />
           <div className="relative mb-3">
             <input
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? 'text' : 'password'}
               name="password"
               placeholder="Password"
               className="w-full p-3 border rounded-md"
@@ -80,8 +89,16 @@ const Signup = () => {
             Sign Up
           </button>
         </form>
+
+        <button
+          onClick={handleGoogleSignup}
+          className="w-full flex items-center justify-center gap-2 mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-md font-semibold"
+        >
+          <FaGoogle /> Sign Up with Google
+        </button>
+
         <p className="text-center mt-4">
-          Already have an account?{" "}
+          Already have an account?{' '}
           <Link to="/login" className="text-indigo-600 hover:underline">
             Log in
           </Link>

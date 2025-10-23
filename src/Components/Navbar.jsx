@@ -111,18 +111,6 @@ const Navbar = () => {
             Home
           </NavLink>
 
-          <NavLink
-            to="/skills"
-            onClick={() => setMenuOpen(false)}
-            className={({ isActive }) =>
-              `block py-2 px-3 rounded ${
-                isActive ? 'bg-indigo-100 font-bold' : 'hover:bg-indigo-100'
-              }`
-            }
-          >
-            Skills
-          </NavLink>
-
           {user ? (
             <>
               <NavLink

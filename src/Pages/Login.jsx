@@ -1,16 +1,15 @@
-
-import { useContext, useState } from "react";
-import { AuthContext } from "../Providers/AuthProviders";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import toast, { Toaster } from "react-hot-toast";
+import { useContext, useState } from 'react';
+import { AuthContext } from '../Providers/AuthProviders';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
-  const { loginUser, resetPassword } = useContext(AuthContext); 
+  const { loginUser, resetPassword, googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/home";
+  const from = location.state?.from?.pathname || '/home';
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -20,21 +19,30 @@ const Login = () => {
 
     loginUser(email, password)
       .then(() => {
-        toast.success("Login successful!");
+        toast.success('Login successful!');
         navigate(from, { replace: true });
       })
       .catch((error) => toast.error(error.message));
   };
 
   const handleResetPassword = () => {
-    const email = prompt("Please enter your email for password reset:");
+    const email = prompt('Please enter your email for password reset:');
     if (!email) {
-      toast.error("Email is required!");
+      toast.error('Email is required!');
       return;
     }
 
     resetPassword(email)
-      .then(() => toast.success("Password reset email sent! Check your inbox."))
+      .then(() => toast.success('Password reset email sent! Check your inbox.'))
+      .catch((err) => toast.error(err.message));
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then(() => {
+        toast.success('Google login successful!');
+        navigate(from, { replace: true });
+      })
       .catch((err) => toast.error(err.message));
   };
 
@@ -43,6 +51,7 @@ const Login = () => {
       <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-8">
         <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
         <Toaster position="top-center" />
+
         <form onSubmit={handleLogin}>
           <input
             type="email"
@@ -53,7 +62,7 @@ const Login = () => {
           />
           <div className="relative mb-3">
             <input
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? 'text' : 'password'}
               name="password"
               placeholder="Password"
               className="w-full p-3 border rounded-md"
@@ -74,15 +83,22 @@ const Login = () => {
           </button>
         </form>
 
+        <button
+          onClick={handleGoogleLogin}
+          className="w-full flex items-center justify-center gap-2 mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded-md font-semibold"
+        >
+          <FaGoogle /> Login with Google
+        </button>
+
         <p
           onClick={handleResetPassword}
-          className="text-center text-sm mt-2 text-red-500 cursor-pointer hover:underline"
+          className="text-center text-sm mt-3 text-red-500 cursor-pointer hover:underline"
         >
           Forgot Password?
         </p>
 
         <p className="text-center mt-4">
-          Don’t have an account?{" "}
+          Don’t have an account?{' '}
           <Link to="/signup" className="text-indigo-600 hover:underline">
             Sign Up
           </Link>
