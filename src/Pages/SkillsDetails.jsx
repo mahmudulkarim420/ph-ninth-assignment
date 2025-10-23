@@ -1,6 +1,7 @@
 // src/Pages/SkillDetails.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import BookSession from '../Components/BookSession';
 
 const SkillDetails = () => {
   const { skillId } = useParams();
@@ -20,6 +21,7 @@ const SkillDetails = () => {
   }
 
   return (
+    <>
     <div className="max-w-6xl mx-auto mt-10 mb-5 p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-3xl font-bold mb-4">{skill.skillName}</h2>
       <img src={skill.image} alt={skill.skillName} className="w-full h-full object-cover mb-4" />
@@ -29,6 +31,8 @@ const SkillDetails = () => {
       <p className="text-yellow-500 font-semibold mb-1">Rating: {skill.rating} ⭐</p>
       <p className="text-gray-500">Slots Available: {skill.slotsAvailable}</p>
     </div>
+      <BookSession/>
+    </>
   );
 };
 
