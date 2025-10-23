@@ -38,14 +38,6 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-            <NavLink
-              to="/skills"
-              className={({ isActive }) =>
-                isActive ? activeClass : inactiveClass
-              }
-            >
-              Skills
-            </NavLink>
 
             {user ? (
               <>
