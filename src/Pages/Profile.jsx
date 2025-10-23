@@ -1,7 +1,7 @@
 // src/Pages/Profile.jsx
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const Profile = () => {
   const { user, updateUserProfile } = useContext(AuthContext);
@@ -26,10 +26,11 @@ const Profile = () => {
   };
 
   return (
+    
     <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
       <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6">
         <h2 className="text-2xl font-bold text-center mb-6">My Profile</h2>
-
+        <Toaster position="top-center" />
         <div className="flex flex-col items-center mb-6">
           <img
             src={user?.photoURL || "https://via.placeholder.com/150"}

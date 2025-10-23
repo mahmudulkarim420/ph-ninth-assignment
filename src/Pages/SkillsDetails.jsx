@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import BookSession from '../Components/BookSession';
+import Loading from '../Components/Loading';
 
 const SkillDetails = () => {
   const { skillId } = useParams();
@@ -17,7 +18,7 @@ const SkillDetails = () => {
   }, [skillId]);
 
   if (!skill) {
-    return <p className="text-center mt-20">Loading...</p>;
+    return <p className="text-center mt-20"><Loading/></p>;
   }
 
   return (

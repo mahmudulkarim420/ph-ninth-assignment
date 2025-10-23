@@ -57,7 +57,7 @@ const Navbar = () => {
                   <img
                     src={user.photoURL}
                     alt="Profile"
-                    className="w-8 h-8 rounded-full object-cover"
+                    className="w-10 h-10 rounded-full object-cover"
                   />
                   <span className="hidden md:inline">My Profile</span>
                 </NavLink>
