@@ -17,6 +17,15 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    if (!passwordRegex.test(password)) {
+      toast.error(
+        'Password must be at least 6 characters long and include uppercase, lowercase, number, and special character.'
+      );
+      return;
+    }
+
     loginUser(email, password)
       .then(() => {
         toast.success('Login successful!');

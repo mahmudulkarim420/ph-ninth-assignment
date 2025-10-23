@@ -4,7 +4,7 @@
 SkillSwap is an interactive local skill exchange platform where users can explore, book, and learn new skills from verified providers. The platform allows users to browse featured skills, view skill details, and connect with top-rated providers in a seamless way.
 
 ## Live URL
-[Your Live Site URL Here](https://example.com)
+[Your Live Site URL Here](https://ph-ninth-assignment-da6b4.web.app)
 
 ## Purpose
 The purpose of SkillSwap is to create a user-friendly platform for skill learning and sharing, empowering individuals to discover new skills, enhance their knowledge, and connect with experienced providers.

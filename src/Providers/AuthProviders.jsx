@@ -8,7 +8,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   updateProfile,
-  sendPasswordResetEmail, // ✅ Forgot Password
+  sendPasswordResetEmail, 
 } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 
@@ -47,7 +47,7 @@ const AuthProviders = ({ children }) => {
     });
   };
 
-  // ✅ Forgot Password function
+  
   const resetPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
   };
@@ -68,7 +68,7 @@ const AuthProviders = ({ children }) => {
     googleLogin,
     logOut,
     updateUserProfile,
-    resetPassword, // ✅ add here
+    resetPassword, 
   };
 
   return (

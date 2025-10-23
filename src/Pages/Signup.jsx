@@ -5,8 +5,7 @@ import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Signup = () => {
-  const { createUser, updateUserProfile, googleLogin } =
-    useContext(AuthContext);
+  const { createUser, updateUserProfile, googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -17,6 +16,15 @@ const Signup = () => {
     const email = form.email.value;
     const password = form.password.value;
     const photoURL = form.photo.value;
+
+   
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    if (!passwordRegex.test(password)) {
+      toast.error(
+        'Password must be at least 6 characters long and include uppercase, lowercase, number, and special character.'
+      );
+      return;
+    }
 
     createUser(email, password)
       .then(() => {

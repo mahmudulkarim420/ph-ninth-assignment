@@ -14,7 +14,7 @@ const Navbar = () => {
       .catch((err) => console.error(err));
   };
 
-  const activeClass = 'text-indigo-600 font-bold border-b-2 border-indigo-600';
+  const activeClass = 'text-indigo-600 font-bold underline';
   const inactiveClass = 'hover:text-indigo-600 transition';
 
   return (
@@ -43,7 +43,11 @@ const Navbar = () => {
               <>
                 <NavLink
                   to="/profile"
-                  className="relative flex items-center gap-2 hover:opacity-80 transition"
+                  className={({ isActive }) =>
+                    `relative flex items-center gap-2 ${
+                      isActive ? activeClass : 'hover:opacity-80 transition'
+                    }`
+                  }
                   title={user.displayName || 'User'}
                 >
                   <img
@@ -116,7 +120,11 @@ const Navbar = () => {
               <NavLink
                 to="/profile"
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-2 py-2 px-3 rounded hover:bg-indigo-100 transition"
+                className={({ isActive }) =>
+                  `flex items-center gap-2 py-2 px-3 rounded ${
+                    isActive ? 'text-indigo-600 font-bold' : 'hover:opacity-80'
+                  } transition`
+                }
                 title={user.displayName || 'User'}
               >
                 <img
