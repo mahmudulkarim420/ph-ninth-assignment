@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../Providers/AuthProviders';
 import { HiMenu, HiX } from 'react-icons/hi';
@@ -13,10 +13,14 @@ const Navbar = () => {
       .catch((err) => console.error(err));
   };
 
+  const activeClass = 'text-indigo-600 font-bold border-b-2 border-indigo-600';
+  const inactiveClass = 'hover:text-indigo-600 transition';
+
   return (
-    <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+    <header className="bg-white shadow-md left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
+          {/* Logo */}
           <Link
             to="/"
             className="text-3xl font-extrabold text-indigo-600 hover:text-indigo-500"
@@ -24,28 +28,47 @@ const Navbar = () => {
             SkillSwap
           </Link>
 
+          {/* Desktop Menu */}
           <nav className="hidden md:flex gap-6 items-center font-medium text-gray-700">
-            <Link to="/" className="hover:text-indigo-600 transition">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? activeClass : inactiveClass
+              }
+            >
               Home
-            </Link>
-            <Link to="/skills" className="hover:text-indigo-600 transition">
+            </NavLink>
+            <NavLink
+              to="/skills"
+              className={({ isActive }) =>
+                isActive ? activeClass : inactiveClass
+              }
+            >
               Skills
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/top-providers"
-              className="hover:text-indigo-600 transition"
+              className={({ isActive }) =>
+                isActive ? activeClass : inactiveClass
+              }
             >
               Top Providers
-            </Link>
+            </NavLink>
 
             {user ? (
               <>
-                <Link
+                <NavLink
                   to="/profile"
-                  className="hover:text-indigo-600 transition"
+                  className="relative flex items-center gap-2 hover:opacity-80 transition"
+                  title={user.displayName || 'User'} // hover e name show hobe
                 >
-                  {user.displayName || 'Profile'}
-                </Link>
+                  <img
+                    src={user.photoURL}
+                    alt="Profile"
+                    className="w-8 h-8 rounded-full object-cover"
+                  />
+                  <span className="hidden md:inline">My Profile</span>
+                </NavLink>
                 <button
                   onClick={handleLogout}
                   className="bg-red-500 text-white px-4 py-1 rounded-lg hover:bg-red-600 transition"
@@ -55,22 +78,31 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link
+                <NavLink
                   to="/login"
-                  className="bg-green-500 text-white px-4 py-1 rounded-lg hover:bg-green-600 transition"
+                  className={({ isActive }) =>
+                    isActive
+                      ? activeClass
+                      : 'bg-green-500 text-white px-4 py-1 rounded-lg hover:bg-green-600 transition'
+                  }
                 >
                   Login
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/signup"
-                  className="bg-blue-500 text-white px-4 py-1 rounded-lg hover:bg-blue-600 transition"
+                  className={({ isActive }) =>
+                    isActive
+                      ? activeClass
+                      : 'bg-blue-500 text-white px-4 py-1 rounded-lg hover:bg-blue-600 transition'
+                  }
                 >
                   Signup
-                </Link>
+                </NavLink>
               </>
             )}
           </nav>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -82,39 +114,59 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-gray-50 shadow-lg px-4 py-4 space-y-3">
-          <Link
+          <NavLink
             to="/"
             onClick={() => setMenuOpen(false)}
-            className="block py-2 px-3 rounded hover:bg-indigo-100"
+            className={({ isActive }) =>
+              `block py-2 px-3 rounded ${
+                isActive ? 'bg-indigo-100 font-bold' : 'hover:bg-indigo-100'
+              }`
+            }
           >
             Home
-          </Link>
-          <Link
+          </NavLink>
+
+          <NavLink
             to="/skills"
             onClick={() => setMenuOpen(false)}
-            className="block py-2 px-3 rounded hover:bg-indigo-100"
+            className={({ isActive }) =>
+              `block py-2 px-3 rounded ${
+                isActive ? 'bg-indigo-100 font-bold' : 'hover:bg-indigo-100'
+              }`
+            }
           >
             Skills
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/top-providers"
             onClick={() => setMenuOpen(false)}
-            className="block py-2 px-3 rounded hover:bg-indigo-100"
+            className={({ isActive }) =>
+              `block py-2 px-3 rounded ${
+                isActive ? 'bg-indigo-100 font-bold' : 'hover:bg-indigo-100'
+              }`
+            }
           >
             Top Providers
-          </Link>
+          </NavLink>
 
           {user ? (
             <>
-              <Link
+              <NavLink
                 to="/profile"
                 onClick={() => setMenuOpen(false)}
-                className="block py-2 px-3 rounded hover:bg-indigo-100"
+                className="flex items-center gap-2 py-2 px-3 rounded hover:bg-indigo-100 transition"
+                title={user.displayName || 'User'}
               >
-                {user.displayName || 'Profile'}
-              </Link>
+                <img
+                  src={user.photoURL}
+                  alt="Profile"
+                  className="w-8 h-8 rounded-full object-cover"
+                />
+                My Profile
+              </NavLink>
               <button
                 onClick={() => {
                   handleLogout();
@@ -127,20 +179,20 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link
+              <NavLink
                 to="/login"
                 onClick={() => setMenuOpen(false)}
                 className="block py-2 px-3 rounded bg-green-500 text-white hover:bg-green-600 transition"
               >
                 Login
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/signup"
                 onClick={() => setMenuOpen(false)}
                 className="block py-2 px-3 rounded bg-blue-500 text-white hover:bg-blue-600 transition"
               >
                 Signup
-              </Link>
+              </NavLink>
             </>
           )}
         </div>
