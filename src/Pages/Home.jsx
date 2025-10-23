@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import TopRatedProviders from '../Components/TopRatedProviders';
 import Carousel from '../Components/Carousel';
+import HowItWorks from '../Components/HowITWorks';
 
 const Home = () => {
   const [skills, setSkills] = useState([]);
@@ -60,6 +61,7 @@ const Home = () => {
         </div>
       </div>
       <TopRatedProviders></TopRatedProviders>
+      <HowItWorks></HowItWorks>
     </>
   );
 };
