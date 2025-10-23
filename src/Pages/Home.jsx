@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
 import TopRatedProviders from '../Components/TopRatedProviders';
 import Carousel from '../Components/Carousel';
-import HowItWorks from '../Components/HowITWorks';
+import HowItWorks from '../Components/HowItWorks';
 
 const Home = () => {
   const [skills, setSkills] = useState([]);
@@ -23,9 +22,9 @@ const Home = () => {
 
       {/* 🌿 All Skills Section */}
       <div className="home-page max-w-6xl mx-auto p-6 mt-20">
-              <h2 className="text-3xl font-bold text-center mb-8 text-blue-600">
-        🌟 All Skills
-      </h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-blue-600">
+          🌟 All Skills
+        </h2>
 
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((skill) => (
