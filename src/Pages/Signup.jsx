@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const Signup = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -36,6 +36,7 @@ const Signup = () => {
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-8">
         <h2 className="text-2xl font-bold text-center mb-6">Create Account</h2>
+        <Toaster position="top-center" />
         <form onSubmit={handleSignup}>
           <input
             type="text"

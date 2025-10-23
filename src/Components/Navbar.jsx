@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../Providers/AuthProviders';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { SiHyperskill } from 'react-icons/si';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -23,9 +24,11 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="text-3xl font-extrabold text-indigo-600 hover:text-indigo-500"
+            className="flex items-center gap-2 text-3xl font-extrabold text-indigo-600 hover:text-indigo-500"
           >
-            SkillSwap
+            <SiHyperskill className="w-10 h-10 text-blue-600" />{' '}
+            {/* React icon as logo */}
+            <span>SkillSwap</span>
           </Link>
 
           {/* Desktop Menu */}

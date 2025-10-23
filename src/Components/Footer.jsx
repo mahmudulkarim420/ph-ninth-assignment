@@ -46,7 +46,7 @@ const Footer = () => {
       </nav>
       <aside>
         <p>
-          Copyright © {new Date().getFullYear()} - All right reserved by ACME
+          Copyright © {new Date().getFullYear()} - All right reserved by SkillSwap
           Industries Ltd
         </p>
       </aside>
