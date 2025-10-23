@@ -17,15 +17,15 @@ const Signup = () => {
     const password = form.password.value;
     const photoURL = form.photo.value;
 
-    // Create user WITHOUT auto-login
+   
     createUser(email, password)
       .then(() => {
-        // Update profile AFTER signup
+      
         updateUserProfile(name, photoURL)
           .then(() => {
             toast.success("Signup successful! Please log in.");
             form.reset();
-            navigate("/login"); // Redirect to login page
+            navigate("/login");
           })
           .catch(() => toast.error("Failed to update profile."));
       })

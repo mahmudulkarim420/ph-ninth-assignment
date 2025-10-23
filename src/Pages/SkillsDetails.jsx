@@ -1,4 +1,3 @@
-// src/Pages/SkillDetails.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import BookSession from '../Components/BookSession';
@@ -18,7 +17,7 @@ const SkillDetails = () => {
   }, [skillId]);
 
   if (!skill) {
-    return <p className="text-center mt-20"><Loading/></p>;
+    return <div className="text-center mt-20"><Loading/></div>;
   }
 
   return (

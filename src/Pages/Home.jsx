@@ -2,13 +2,21 @@ import React, { useEffect, useState } from 'react';
 import TopRatedProviders from '../Components/TopRatedProviders';
 import Carousel from '../Components/Carousel';
 import HowItWorks from '../Components/HowItWorks';
-import { Link } from 'react-router-dom'; // Optional: future routing
+import { Link } from 'react-router-dom';
 import WhyChooseUs from '../Components/WhyChooseUs';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+    });
+
     fetch('/fakeData.json')
       .then((res) => res.json())
       .then((data) => setSkills(data))
@@ -17,21 +25,23 @@ const Home = () => {
 
   return (
     <>
-      {/* 🌟 Hero Carousel Section */}
-      <div className="home-carousel">
+      <div className="home-carousel" data-aos="fade-down">
         <Carousel />
       </div>
 
-      {/* 🌿 All Skills Section */}
-      <div className="home-page max-w-6xl mx-auto p-6 mt-20">
+      <div className="home-page max-w-6xl mx-auto p-6 mt-20" data-aos="fade-up">
         <h2 className="text-3xl font-bold text-center mb-8 text-blue-600">
           🌟 All Skills
         </h2>
 
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div
+          className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+          data-aos="zoom-in"
+        >
           {skills.map((skill) => (
             <div
               key={skill.skillId}
+              data-aos="fade-up"
               className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition flex flex-col"
             >
               <img
@@ -57,7 +67,6 @@ const Home = () => {
                   Slots Available: {skill.slotsAvailable}
                 </p>
               </div>
-              {/* 👇 View Details Button */}
               <div className="p-4 text-center">
                 <Link
                   to={`/skills/${skill.skillId}`}
@@ -71,9 +80,17 @@ const Home = () => {
         </div>
       </div>
 
-      <TopRatedProviders />
-      <HowItWorks />
-      <WhyChooseUs/>
+      <div data-aos="fade-up">
+        <TopRatedProviders />
+      </div>
+
+      <div data-aos="fade-right">
+        <HowItWorks />
+      </div>
+
+      <div data-aos="fade-left">
+        <WhyChooseUs />
+      </div>
     </>
   );
 };

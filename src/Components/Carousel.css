@@ -8,10 +8,10 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== Slide Image Styling ===== */
+
 .home-carousel img {
   width: 100%;
-  height: 70vh; /* Balanced hero height */
+  height: 70vh; 
   object-fit: cover;
   object-position: center;
   transition: transform 0.6s ease;
@@ -21,7 +21,6 @@
   transform: scale(1.03);
 }
 
-/* ===== Swiper Navigation Buttons ===== */
 .swiper-button-next,
 .swiper-button-prev {
   color: #fff;
@@ -40,17 +39,17 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* ===== Swiper Pagination Bullets ===== */
+
 .swiper-pagination-bullet {
   background-color: rgba(255, 255, 255, 0.6);
   opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ff6347; /* Tomato color */
+  background-color: #ff6347; 
 }
 
-/* ===== Responsive Height Adjustments ===== */
+
 @media (max-width: 1024px) {
   .home-carousel img {
     height: 55vh;

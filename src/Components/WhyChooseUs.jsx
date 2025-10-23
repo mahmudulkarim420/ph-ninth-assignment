@@ -1,11 +1,11 @@
-// src/Components/WhyChooseUs.jsx
+
 import React, { useEffect, useState } from "react";
 
 const WhyChooseUs = () => {
   const [features, setFeatures] = useState([]);
 
   useEffect(() => {
-    fetch("/features.json") // public folder-এ features.json রাখতে হবে
+    fetch("/features.json") 
       .then((res) => res.json())
       .then((data) => setFeatures(data))
       .catch((err) => console.error("Error fetching features:", err));

@@ -1,4 +1,4 @@
-// src/Pages/Login.jsx
+
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -6,7 +6,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
-  const { loginUser, resetPassword } = useContext(AuthContext); // resetPassword add kora lagbe
+  const { loginUser, resetPassword } = useContext(AuthContext); 
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();

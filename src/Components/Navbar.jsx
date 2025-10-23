@@ -21,17 +21,14 @@ const Navbar = () => {
     <header className="bg-white shadow-md left-0 w-full z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          {/* Logo */}
           <Link
             to="/"
             className="flex items-center gap-2 text-3xl font-extrabold text-indigo-600 hover:text-indigo-500"
           >
             <SiHyperskill className="w-10 h-10 text-blue-600" />{' '}
-            {/* React icon as logo */}
             <span>SkillSwap</span>
           </Link>
 
-          {/* Desktop Menu */}
           <nav className="hidden md:flex gap-6 items-center font-medium text-gray-700">
             <NavLink
               to="/"
@@ -55,7 +52,7 @@ const Navbar = () => {
                 <NavLink
                   to="/profile"
                   className="relative flex items-center gap-2 hover:opacity-80 transition"
-                  title={user.displayName || 'User'} // hover e name show hobe
+                  title={user.displayName || 'User'}
                 >
                   <img
                     src={user.photoURL}
@@ -97,7 +94,6 @@ const Navbar = () => {
             )}
           </nav>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -109,7 +105,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-gray-50 shadow-lg px-4 py-4 space-y-3">
           <NavLink

@@ -1,11 +1,10 @@
-// src/Components/BookSession.jsx
-import React, { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import React, { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const BookSession = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    name: '',
+    email: '',
   });
 
   const handleChange = (e) => {
@@ -15,16 +14,15 @@ const BookSession = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email) {
-      toast.error("Please fill all fields!");
+      toast.error('Please fill all fields!');
       return;
     }
 
-    toast.success("Session booked successfully! ✅");
+    toast.success('Session booked successfully! ✅');
 
-    // Clear form
     setFormData({
-      name: "",
-      email: "",
+      name: '',
+      email: '',
     });
   };
 
@@ -32,7 +30,9 @@ const BookSession = () => {
     <section className="py-16 bg-gray-50">
       <Toaster position="top-center" />
       <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
-        <h2 className="text-3xl font-bold text-center mb-8 text-blue-700">Book a Session</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-blue-700">
+          Book a Session
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block mb-1 font-medium">Name</label>

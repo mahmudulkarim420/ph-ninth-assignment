@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as FaIcons from "react-icons/fa"; // সব Fa icon import
+import * as FaIcons from "react-icons/fa"; 
 
 const HowItWorks = () => {
   const [steps, setSteps] = useState([]);
