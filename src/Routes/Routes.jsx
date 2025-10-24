@@ -7,11 +7,13 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import Profile from '../Pages/Profile';
 import SkillsDetails from '../Pages/SkillsDetails';
 import ForgetPassword from '../Pages/ForgetPassword';
+import ErrorPage from '../Pages/ErrorPage';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layouts />,
+    errorElement: <ErrorPage/>,
     children: [
       {
         index: true,
