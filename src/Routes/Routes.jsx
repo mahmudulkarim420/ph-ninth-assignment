@@ -5,7 +5,8 @@ import Signup from '../Pages/Signup';
 import Login from '../Pages/Login';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import Profile from '../Pages/Profile';
-import SkillsDetails from '../Pages/SkillsDetails'; 
+import SkillsDetails from '../Pages/SkillsDetails';
+import ForgetPassword from '../Pages/ForgetPassword';
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +22,6 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
 
-      
       {
         path: '/skills',
         element: (
@@ -30,8 +30,6 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-
-    
       {
         path: '/skills/:skillId',
         element: (
@@ -49,6 +47,11 @@ export const router = createBrowserRouter([
         path: '/login',
         element: <Login />,
       },
+      {
+        path: '/forget-password',
+        element: <ForgetPassword />,
+      },
+
       {
         path: '/profile',
         element: (

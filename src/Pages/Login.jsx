@@ -5,8 +5,9 @@ import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
-  const { loginUser, resetPassword, googleLogin } = useContext(AuthContext);
+  const { loginUser, googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/home';
@@ -14,17 +15,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
-    const email = form.email.value;
     const password = form.password.value;
-
-    
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
-    if (!passwordRegex.test(password)) {
-      toast.error(
-        'Password must be at least 6 characters long and include uppercase, lowercase, number, and special character.'
-      );
-      return;
-    }
 
     loginUser(email, password)
       .then(() => {
@@ -32,18 +23,6 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => toast.error(error.message));
-  };
-
-  const handleResetPassword = () => {
-    const email = prompt('Please enter your email for password reset:');
-    if (!email) {
-      toast.error('Email is required!');
-      return;
-    }
-
-    resetPassword(email)
-      .then(() => toast.success('Password reset email sent! Check your inbox.'))
-      .catch((err) => toast.error(err.message));
   };
 
   const handleGoogleLogin = () => {
@@ -67,6 +46,8 @@ const Login = () => {
             name="email"
             placeholder="Email"
             className="w-full mb-3 p-3 border rounded-md"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
           <div className="relative mb-3">
@@ -99,11 +80,14 @@ const Login = () => {
           <FaGoogle /> Login with Google
         </button>
 
-        <p
-          onClick={handleResetPassword}
-          className="text-center text-sm mt-3 text-red-500 cursor-pointer hover:underline"
-        >
-          Forgot Password?
+        <p className="text-center text-sm mt-3">
+          <Link
+            to="/forget-password"
+            state={{ email }}
+            className="text-red-500 hover:underline"
+          >
+            Forget Password?
+          </Link>
         </p>
 
         <p className="text-center mt-4">
