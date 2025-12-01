@@ -149,7 +149,7 @@ const Navbar = () => {
             Home
           </NavLink>
           <NavLink
-            to="/skills"
+            to="/all-items"
             onClick={() => setMenuOpen(false)}
             className={({ isActive }) =>
               `block py-2 px-3 rounded ${
@@ -160,7 +160,7 @@ const Navbar = () => {
             All Items
           </NavLink>
           <NavLink
-            to="/about"
+            to="/about-us"
             onClick={() => setMenuOpen(false)}
             className={({ isActive }) =>
               `block py-2 px-3 rounded ${
