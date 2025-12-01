@@ -13,7 +13,7 @@ const HowItWorks = () => {
 
   return (
     <section className="bg-blue-50 py-16 mt-20">
-      <div className="max-w-6xl mx-auto px-4 text-center">
+      <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-10">
           ⚙️ How It Works
         </h2>

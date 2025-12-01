@@ -48,7 +48,10 @@ export const router = createBrowserRouter([
         path: '/skills/:skillId',
         element: <SkillsDetails />,
       },
-
+      {
+        path: '*',
+        element: <ErrorPage />,
+      },
       {
         path: '/signup',
         element: <Signup />,
