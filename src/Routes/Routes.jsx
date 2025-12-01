@@ -8,12 +8,16 @@ import Profile from '../Pages/Profile';
 import SkillsDetails from '../Pages/SkillsDetails';
 import ForgetPassword from '../Pages/ForgetPassword';
 import ErrorPage from '../Pages/ErrorPage';
+import AllItems from '../Pages/AllItems';
+import AboutUs from '../Pages/AboutUs';
+import Contact from '../Pages/Contact';
+import Support from '../Pages/Support';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layouts />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -25,20 +29,24 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: '/skills',
-        element: (
-          <PrivateRoute>
-            <SkillsDetails />
-          </PrivateRoute>
-        ),
+        path: '/all-items',
+        element: <AllItems />,
+      },
+      {
+        path: 'about-us',
+        element: <AboutUs />,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
+      },
+      {
+        path: 'support',
+        element: <Support />,
       },
       {
         path: '/skills/:skillId',
-        element: (
-          <PrivateRoute>
-            <SkillsDetails />
-          </PrivateRoute>
-        ),
+        element: <SkillsDetails />,
       },
 
       {

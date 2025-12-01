@@ -7,9 +7,13 @@
     "price": 45,
     "rating": 4.9,
     "slotsAvailable": 8,
-    "description": "Foundational course on Python syntax, data structures, and basic scripting.",
-    "image": "https://i.ibb.co.com/fGnCpsFF/LmpwZw.jpg",
-    "category": "Technology"
+    "description": "Foundational course on Python syntax, data structures, and basic scripting. Perfect for beginners looking to start their coding journey.",
+    "image": "https://i.ibb.co/fGnCpsFF/LmpwZw.jpg",
+    "category": "Technology",
+    "reviews": [
+      { "reviewer": "Alice", "comment": "Great instructor and clear explanations!", "rating": 5 },
+      { "reviewer": "Bob", "comment": "Very helpful course for beginners.", "rating": 4.8 }
+    ]
   },
   {
     "skillId": 102,
@@ -19,9 +23,13 @@
     "price": 35,
     "rating": 4.7,
     "slotsAvailable": 4,
-    "description": "Mastering layers, masks, and advanced retouching in Adobe Photoshop.",
-    "image": "https://i.ibb.co.com/SXZWPWL8/LmpwZw.jpg",
-    "category": "Design"
+    "description": "Mastering layers, masks, and advanced retouching in Adobe Photoshop. Ideal for designers looking to enhance their photo editing skills.",
+    "image": "https://i.ibb.co/SXZWPWL8/LmpwZw.jpg",
+    "category": "Design",
+    "reviews": [
+      { "reviewer": "Charlie", "comment": "Excellent techniques and easy to follow.", "rating": 4.7 },
+      { "reviewer": "Dana", "comment": "Learned a lot about retouching and layers.", "rating": 4.6 }
+    ]
   },
   {
     "skillId": 103,
@@ -31,9 +39,13 @@
     "price": 15,
     "rating": 4.5,
     "slotsAvailable": 10,
-    "description": "Gentle Hatha yoga focused on breathing and relaxation.",
-    "image": "https://i.ibb.co.com/9932SNmv/anBn.jpg",
-    "category": "Health & Fitness"
+    "description": "Gentle Hatha yoga focused on breathing and relaxation. Helps reduce stress and improve flexibility.",
+    "image": "https://i.ibb.co/9932SNmv/anBn.jpg",
+    "category": "Health & Fitness",
+    "reviews": [
+      { "reviewer": "Ethan", "comment": "Really helped me relax and reduce stress.", "rating": 4.5 },
+      { "reviewer": "Fiona", "comment": "Wonderful yoga sessions!", "rating": 4.6 }
+    ]
   },
   {
     "skillId": 104,
@@ -43,9 +55,13 @@
     "price": 50,
     "rating": 4.8,
     "slotsAvailable": 5,
-    "description": "Understanding budgeting, savings, and basic investment principles.",
-    "image": "https://i.ibb.co.com/9HPwjHrM/TTcz-Z1-Az-ZDBh-MD0.jpg",
-    "category": "Finance"
+    "description": "Understanding budgeting, savings, and basic investment principles. A must-have course for financial beginners.",
+    "image": "https://i.ibb.co/9HPwjHrM/TTcz-Z1-Az-ZDBh-MD0.jpg",
+    "category": "Finance",
+    "reviews": [
+      { "reviewer": "George", "comment": "Very practical tips for managing money.", "rating": 4.8 },
+      { "reviewer": "Hannah", "comment": "Clear and easy to understand concepts.", "rating": 4.7 }
+    ]
   },
   {
     "skillId": 105,
@@ -55,9 +71,13 @@
     "price": 25,
     "rating": 4.6,
     "slotsAvailable": 7,
-    "description": "Weekly group sessions to improve fluency and cultural understanding.",
-    "image": "https://i.ibb.co.com/jvzqx9GQ/LmpwZw.jpg",
-    "category": "Language"
+    "description": "Weekly group sessions to improve fluency and cultural understanding in Spanish. Suitable for intermediate learners.",
+    "image": "https://i.ibb.co/jvzqx9GQ/LmpwZw.jpg",
+    "category": "Language",
+    "reviews": [
+      { "reviewer": "Ivan", "comment": "Helped me improve my speaking skills a lot.", "rating": 4.6 },
+      { "reviewer": "Julia", "comment": "Fun and interactive sessions.", "rating": 4.5 }
+    ]
   },
   {
     "skillId": 106,
@@ -67,9 +87,13 @@
     "price": 30,
     "rating": 4.4,
     "slotsAvailable": 6,
-    "description": "Learn essential repairs like plumbing fixes and wall patching.",
-    "image": "https://i.ibb.co.com/0j32X1q4/MjkwNDI.jpg",
-    "category": "Home & Garden"
+    "description": "Learn essential repairs like plumbing fixes, wall patching, and simple electrical tasks. Perfect for homeowners.",
+    "image": "https://i.ibb.co/0j32X1q4/MjkwNDI.jpg",
+    "category": "Home & Garden",
+    "reviews": [
+      { "reviewer": "Kevin", "comment": "Very practical tips for everyday problems.", "rating": 4.4 },
+      { "reviewer": "Laura", "comment": "Easy to follow instructions.", "rating": 4.3 }
+    ]
   },
   {
     "skillId": 107,
@@ -79,9 +103,13 @@
     "price": 60,
     "rating": 4.9,
     "slotsAvailable": 3,
-    "description": "Developing effective SEO, social media, and content marketing plans.",
-    "image": "https://i.ibb.co.com/xKtd4pYQ/LmpwZw.jpg",
-    "category": "Business"
+    "description": "Developing effective SEO, social media, and content marketing plans. Perfect for small business owners.",
+    "image": "https://i.ibb.co/xKtd4pYQ/LmpwZw.jpg",
+    "category": "Business",
+    "reviews": [
+      { "reviewer": "Mike", "comment": "Excellent insights for marketing.", "rating": 4.9 },
+      { "reviewer": "Nina", "comment": "Practical and easy to implement.", "rating": 4.8 }
+    ]
   },
   {
     "skillId": 108,
@@ -91,9 +119,13 @@
     "price": 20,
     "rating": 4.7,
     "slotsAvailable": 9,
-    "description": "Introduction to basic techniques, colour mixing, and composition.",
-    "image": "https://i.ibb.co.com/hRK4z1mM/anBn.jpg",
-    "category": "Arts"
+    "description": "Introduction to basic techniques, colour mixing, and composition. Great for aspiring artists.",
+    "image": "https://i.ibb.co/hRK4z1mM/anBn.jpg",
+    "category": "Arts",
+    "reviews": [
+      { "reviewer": "Olivia", "comment": "Fun and easy to follow!", "rating": 4.7 },
+      { "reviewer": "Paul", "comment": "Learned a lot about watercolors.", "rating": 4.6 }
+    ]
   },
   {
     "skillId": 109,
@@ -103,9 +135,13 @@
     "price": 25,
     "rating": 4.8,
     "slotsAvailable": 5,
-    "description": "Master pour-over, French press, and espresso techniques at home.",
-    "image": "https://i.ibb.co.com/ccBzmw89/LmpwZw.jpg",
-    "category": "Food & Drink"
+    "description": "Master pour-over, French press, and espresso techniques at home. Suitable for coffee enthusiasts.",
+    "image": "https://i.ibb.co/ccBzmw89/LmpwZw.jpg",
+    "category": "Food & Drink",
+    "reviews": [
+      { "reviewer": "Quinn", "comment": "Loved the hands-on coffee tips!", "rating": 4.8 },
+      { "reviewer": "Rita", "comment": "Perfect for learning espresso techniques.", "rating": 4.7 }
+    ]
   },
   {
     "skillId": 110,
@@ -115,9 +151,13 @@
     "price": 40,
     "rating": 4.6,
     "slotsAvailable": 6,
-    "description": "Techniques for overcoming stage fright and delivering engaging presentations.",
-    "image": "https://i.ibb.co.com/0jrnHzxD/LmpwZw.jpg",
-    "category": "Personal Development"
+    "description": "Techniques for overcoming stage fright and delivering engaging presentations. Ideal for professionals and students.",
+    "image": "https://i.ibb.co/0jrnHzxD/LmpwZw.jpg",
+    "category": "Personal Development",
+    "reviews": [
+      { "reviewer": "Sam", "comment": "Boosted my confidence significantly.", "rating": 4.6 },
+      { "reviewer": "Tina", "comment": "Great exercises and tips.", "rating": 4.5 }
+    ]
   },
   {
     "skillId": 111,
@@ -127,9 +167,13 @@
     "price": 55,
     "rating": 4.9,
     "slotsAvailable": 4,
-    "description": "Using PivotTables, VLOOKUP, and advanced formulas for data reporting.",
-    "image": "https://i.ibb.co.com/SXsg6vZy/anBn.jpg",
-    "category": "Technology"
+    "description": "Using PivotTables, VLOOKUP, and advanced formulas for data reporting. Perfect for aspiring analysts.",
+    "image": "https://i.ibb.co/SXsg6vZy/anBn.jpg",
+    "category": "Technology",
+    "reviews": [
+      { "reviewer": "Uma", "comment": "Advanced Excel techniques explained very well.", "rating": 4.9 },
+      { "reviewer": "Victor", "comment": "Helpful for data analysis projects.", "rating": 4.8 }
+    ]
   },
   {
     "skillId": 112,
@@ -139,8 +183,12 @@
     "price": 30,
     "rating": 4.7,
     "slotsAvailable": 12,
-    "description": "Hands-on virtual cooking class for meals under 30 minutes.",
-    "image": "https://i.ibb.co.com/VYNMWjGW/c-GVz-LTEuc-G5n.png",
-    "category": "Food & Drink"
+    "description": "Hands-on virtual cooking class for meals under 30 minutes. Healthy, easy, and delicious recipes.",
+    "image": "https://i.ibb.co/VYNMWjGW/c-GVz-LTEuc-G5n.png",
+    "category": "Food & Drink",
+    "reviews": [
+      { "reviewer": "Wendy", "comment": "Learned new quick recipes!", "rating": 4.7 },
+      { "reviewer": "Xander", "comment": "Healthy and tasty meals.", "rating": 4.6 }
+    ]
   }
 ]

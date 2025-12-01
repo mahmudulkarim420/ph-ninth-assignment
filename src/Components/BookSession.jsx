@@ -29,7 +29,7 @@ const BookSession = () => {
   return (
     <section className="py-16 bg-gray-50">
       <Toaster position="top-center" />
-      <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+      <div className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md">
         <h2 className="text-3xl font-bold text-center mb-8 text-blue-700">
           Book a Session
         </h2>

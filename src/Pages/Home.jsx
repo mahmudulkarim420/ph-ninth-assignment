@@ -6,6 +6,12 @@ import { Link } from 'react-router-dom';
 import WhyChooseUs from '../Components/WhyChooseUs';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Categories from '../Components/Categories';
+import Blog from '../Components/Blog';
+import Offers from '../Components/Offers';
+import NewsLetter from '../Components/NewsLetter';
 
 const Home = () => {
   const [skills, setSkills] = useState([]);
@@ -29,13 +35,13 @@ const Home = () => {
         <Carousel />
       </div>
 
-      <div className="home-page max-w-6xl mx-auto p-6 mt-20" data-aos="fade-up">
+      <div className="home-page max-w-7xl mx-auto p-6 mt-20" data-aos="fade-up">
         <h2 className="text-3xl font-bold text-center mb-8 text-blue-600">
           🌟 All Skills
         </h2>
 
         <div
-          className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-6 grid-cols-1 sm:grid-cols-3 lg:grid-cols-4"
           data-aos="zoom-in"
         >
           {skills.map((skill) => (
@@ -47,7 +53,7 @@ const Home = () => {
               <img
                 src={skill.image}
                 alt={skill.skillName}
-                className="w-full h-70 object-cover"
+                className="w-full h-45 object-cover"
               />
               <div className="p-4 flex-1">
                 <h3 className="text-xl font-semibold mb-1">
@@ -63,7 +69,7 @@ const Home = () => {
                 <p className="text-yellow-500 font-semibold">
                   Rating: {skill.rating} ⭐
                 </p>
-                <p className="text-gray-500 text-sm mb-4">
+                <p className="text-gray-500 text-sm ">
                   Slots Available: {skill.slotsAvailable}
                 </p>
               </div>
@@ -90,6 +96,18 @@ const Home = () => {
 
       <div data-aos="fade-left">
         <WhyChooseUs />
+      </div>
+      <div data-aos="zoom-in">
+        <Categories />
+      </div>
+      <div data-aos="zoom-in">
+        <Blog />
+      </div>
+      <div data-aos="zoom-in">
+        <Offers />
+      </div>
+      <div data-aos="zoom-in">
+        <NewsLetter />
       </div>
     </>
   );

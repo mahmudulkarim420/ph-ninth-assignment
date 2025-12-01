@@ -18,8 +18,8 @@ const Navbar = () => {
   const inactiveClass = 'hover:text-indigo-600 transition';
 
   return (
-    <header className="bg-white shadow-md left-0 w-full z-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="bg-white shadow-md left-0 w-full z-50 sticky top-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <Link
             to="/"
@@ -29,7 +29,7 @@ const Navbar = () => {
             <span>SkillSwap</span>
           </Link>
 
-          <nav className="hidden md:flex gap-6 items-center font-medium text-gray-700">
+          <nav className="hidden md:flex gap-6 items-center mx-auto font-medium text-gray-700">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -38,7 +38,41 @@ const Navbar = () => {
             >
               Home
             </NavLink>
+            <NavLink
+              to="/all-items"
+              className={({ isActive }) =>
+                isActive ? activeClass : inactiveClass
+              }
+            >
+              All Items
+            </NavLink>
+            <NavLink
+              to="/about-us"
+              className={({ isActive }) =>
+                isActive ? activeClass : inactiveClass
+              }
+            >
+              About Us
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? activeClass : inactiveClass
+              }
+            >
+              Contact
+            </NavLink>
+            <NavLink
+              to="/support"
+              className={({ isActive }) =>
+                isActive ? activeClass : inactiveClass
+              }
+            >
+              Support
+            </NavLink>
+          </nav>
 
+          <div className="hidden md:flex items-center gap-4">
             {user ? (
               <>
                 <NavLink
@@ -88,7 +122,7 @@ const Navbar = () => {
                 </NavLink>
               </>
             )}
-          </nav>
+          </div>
 
           <div className="md:hidden flex items-center">
             <button
@@ -113,6 +147,50 @@ const Navbar = () => {
             }
           >
             Home
+          </NavLink>
+          <NavLink
+            to="/skills"
+            onClick={() => setMenuOpen(false)}
+            className={({ isActive }) =>
+              `block py-2 px-3 rounded ${
+                isActive ? 'bg-indigo-100 font-bold' : 'hover:bg-indigo-100'
+              }`
+            }
+          >
+            All Items
+          </NavLink>
+          <NavLink
+            to="/about"
+            onClick={() => setMenuOpen(false)}
+            className={({ isActive }) =>
+              `block py-2 px-3 rounded ${
+                isActive ? 'bg-indigo-100 font-bold' : 'hover:bg-indigo-100'
+              }`
+            }
+          >
+            About Us
+          </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={() => setMenuOpen(false)}
+            className={({ isActive }) =>
+              `block py-2 px-3 rounded ${
+                isActive ? 'bg-indigo-100 font-bold' : 'hover:bg-indigo-100'
+              }`
+            }
+          >
+            Contact
+          </NavLink>
+          <NavLink
+            to="/support"
+            onClick={() => setMenuOpen(false)}
+            className={({ isActive }) =>
+              `block py-2 px-3 rounded ${
+                isActive ? 'bg-indigo-100 font-bold' : 'hover:bg-indigo-100'
+              }`
+            }
+          >
+            Support
           </NavLink>
 
           {user ? (
