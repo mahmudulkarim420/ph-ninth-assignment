@@ -14,8 +14,8 @@ const TopRatedProviders = () => {
   }, []);
 
   return (
-    <div className="my-16 bg-blue-50 py-10">
-      <div className="max-w-7xl mx-auto px-4">
+    <div className="my-16 flex justify-center">
+      <div className="w-[1200px] bg-blue-50 rounded-lg py-10 px-6 shadow-md">
         <h2 className="text-3xl font-bold text-center mb-8 text-blue-700">
           🌟 Top Rated Providers
         </h2>

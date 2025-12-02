@@ -1,7 +1,7 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Carousel = () => {
   const settings = {
@@ -11,22 +11,22 @@ const Carousel = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    
+
     responsive: [
       {
-        breakpoint: 1024, 
+        breakpoint: 1024,
         settings: {
           slidesToShow: 1,
         },
       },
       {
-        breakpoint: 768, 
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
         },
       },
       {
-        breakpoint: 640, 
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
         },
@@ -39,7 +39,7 @@ const Carousel = () => {
       <Slider {...settings}>
         <div>
           <img
-            src="https://i.ibb.co/3m5c7jcb/MA.jpg"
+            src="https://i.ibb.co/jv78HbC1/JnE9NzA.jpg"
             alt="Banner 1"
             className="w-full h-[30vh] sm:h-[60vh] xs:h-[70vh] object-cover"
           />
@@ -55,6 +55,20 @@ const Carousel = () => {
           <img
             src="https://i.ibb.co/xK8ZkWbL/UlVJPQ.jpg"
             alt="Banner 3"
+            className="w-full h-[30vh] sm:h-[60vh] xs:h-[90vh] object-cover"
+          />
+        </div>
+        <div>
+          <img
+            src="https://i.ibb.co/7J5zwqwT/Ym-Ew-OGQ5-My5qc-Gc.jpg"
+            alt="Banner 4"
+            className="w-full h-[30vh] sm:h-[60vh] xs:h-[90vh] object-cover"
+          />
+        </div>
+        <div>
+          <img
+            src="https://i.ibb.co/LhgBBGzR/LnBuZw.png"
+            alt="Banner 5"
             className="w-full h-[30vh] sm:h-[60vh] xs:h-[90vh] object-cover"
           />
         </div>

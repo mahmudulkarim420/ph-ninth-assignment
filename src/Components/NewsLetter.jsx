@@ -11,8 +11,8 @@ const NewsLetter = () => {
   };
 
   return (
-    <div className="my-16 bg-blue-100 py-12">
-      <div className="max-w-2xl mx-auto text-center">
+    <div className="w-[1200px] mx-auto my-16 bg-blue-100 rounded-lg py-10 px-6 shadow-md">
+      <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4 text-blue-700">
           Subscribe to Our Newsletter
         </h2>

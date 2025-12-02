@@ -10,7 +10,7 @@ const Offers = () => {
   };
 
   return (
-    <div className="my-16 bg-yellow-50 py-12 relative">
+    <div className="w-[1200px] mx-auto my-16 bg-yellow-50 rounded-lg py-10 px-6 shadow-md relative">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-4 text-yellow-700">
           Special Offers
@@ -27,7 +27,7 @@ const Offers = () => {
       </div>
 
       {showToast && (
-        <div className="fixed bottom-6 right-6 bg-yellow-400 text-white px-6 py-3 rounded shadow-lg animate-bounce">
+        <div className="fixed bottom-6 right-10 bg-yellow-400 text-white px-6 py-3 rounded shadow-lg animate-bounce">
           No offers available at the moment
         </div>
       )}

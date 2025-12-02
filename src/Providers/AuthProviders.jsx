@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from 'react';
 import {
   getAuth,
   onAuthStateChanged,
@@ -8,9 +8,10 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   updateProfile,
-  sendPasswordResetEmail, 
-} from "firebase/auth";
-import app from "../Firebase/firebase.config";
+  sendPasswordResetEmail,
+  deleteUser,
+} from 'firebase/auth';
+import app from '../Firebase/firebase.config';
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -47,9 +48,16 @@ const AuthProviders = ({ children }) => {
     });
   };
 
-  
   const resetPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
+  };
+
+  const removeAccount = () => {
+    if (auth.currentUser) {
+      return deleteUser(auth.currentUser);
+    } else {
+      return Promise.reject('No user logged in');
+    }
   };
 
   useEffect(() => {
@@ -68,7 +76,8 @@ const AuthProviders = ({ children }) => {
     googleLogin,
     logOut,
     updateUserProfile,
-    resetPassword, 
+    resetPassword,
+    removeAccount,
   };
 
   return (

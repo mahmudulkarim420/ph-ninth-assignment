@@ -12,7 +12,7 @@ const HowItWorks = () => {
   }, []);
 
   return (
-    <section className="bg-blue-50 py-16 mt-20">
+    <section className="w-[1200px] mx-auto my-16 bg-blue-50 rounded-lg py-10 px-6 shadow-md">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-10">
           ⚙️ How It Works

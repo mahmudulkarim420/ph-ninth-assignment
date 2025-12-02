@@ -12,7 +12,7 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-blue-50 mt-20">
+    <section className="w-[1200px] mx-auto my-16 bg-blue-50 rounded-lg py-10 px-6 shadow-md">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-10">Why Choose SkillSwap</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4">
